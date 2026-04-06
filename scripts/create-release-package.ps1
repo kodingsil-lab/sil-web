@@ -13,6 +13,11 @@ $dbFile = Join-Path $deployDir "database-$timestamp.sql"
 $themeZip = Join-Path $deployDir "sil-portfolio-theme-$timestamp.zip"
 $pluginZip = Join-Path $deployDir "sil-core-plugin-$timestamp.zip"
 $uploadsZip = Join-Path $deployDir "uploads-$timestamp.zip"
+$xamppMysqlBin = 'C:\xampp\mysql\bin'
+
+if (Test-Path $xamppMysqlBin) {
+    $env:PATH = "$xamppMysqlBin;$env:PATH"
+}
 
 if (-not (Test-Path $deployDir)) {
     New-Item -ItemType Directory -Path $deployDir | Out-Null
