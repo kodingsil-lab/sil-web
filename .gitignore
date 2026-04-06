@@ -1,6 +1,9 @@
 *
 !/.gitignore
 !/.gitattributes
+!/DEPLOY.md
+!/scripts/
+!/scripts/**
 !/wp-content/
 
 wp-content/*
@@ -29,3 +32,5 @@ error_log
 Thumbs.db
 .idea/
 .vscode/
+deploy/
+backups/
