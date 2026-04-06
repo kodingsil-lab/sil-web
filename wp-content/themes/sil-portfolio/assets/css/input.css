@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  @apply antialiased;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  @apply transition-colors duration-200;
+}
+
+img {
+  @apply object-cover;
+}
+
+.btn {
+  @apply rounded-xl px-5 py-3 font-semibold transition;
+}
+
+/* Smooth transition global */
+* {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Hover card */
+.card-hover {
+  @apply hover:-translate-y-1 hover:shadow-lg;
+}
+
+/* Fade in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.media-shell {
+  @apply relative overflow-hidden bg-slate-200 dark:bg-slate-800;
+}
+
+.media-shell::after {
+  content: "";
+  @apply absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/30 to-transparent dark:via-white/10;
+}
+
+.media-shell.is-loaded::after {
+  @apply hidden;
+}
+
+.media-image {
+  @apply opacity-0;
+}
+
+.media-image.is-loaded {
+  @apply opacity-100;
+}
+
+.sil-contact-form .wpcf7-form {
+  @apply space-y-5;
+}
+
+.sil-contact-form p {
+  @apply text-sm text-slate-600 dark:text-slate-300;
+}
+
+.sil-contact-form label {
+  @apply mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-200;
+}
+
+.sil-contact-form .wpcf7-form-control:not(.wpcf7-submit) {
+  @apply mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-700 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:focus:ring-emerald-900;
+}
+
+.sil-contact-form textarea.wpcf7-form-control {
+  @apply min-h-[180px];
+}
+
+.sil-contact-form .wpcf7-submit {
+  @apply inline-flex cursor-pointer rounded-xl bg-emerald-600 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-700;
+}
+
+.sil-contact-form .wpcf7-spinner {
+  @apply ml-3 align-middle;
+}
+
+.sil-contact-form .wpcf7-response-output {
+  @apply mt-4 rounded-xl border border-slate-200 px-4 py-3 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-300;
+}
+
+.sil-contact-form .wpcf7-not-valid-tip {
+  @apply mt-2 text-xs text-rose-500;
+}
+
+.sidebar-divider {
+  @apply border-b border-slate-100 dark:border-slate-800/80;
+}
+
+.sidebar-switch-track {
+  @apply relative inline-flex h-7 w-12 items-center rounded-full border border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-950;
+}
+
+.sidebar-switch-thumb {
+  @apply absolute left-1 h-5 w-5 rounded-full bg-slate-400 shadow-sm;
+}
+
+.dark .sidebar-switch-track {
+  @apply border-emerald-700 bg-emerald-500/20;
+}
+
+.dark .sidebar-switch-thumb {
+  @apply translate-x-5 bg-emerald-500;
+}
